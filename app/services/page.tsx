@@ -152,10 +152,10 @@ export default function ServicesPage() {
                 title: 'Professional Equipment',
                 description: '4K/8K capable gear with latest editing software',
               },
-              {
-                title: 'Unlimited Revisions',
-                description: 'Work together until you&apos;re completely satisfied',
-              },
+              // {
+              //   title: 'Unlimited Revisions',
+              //   description: 'Work together until you&apos;re completely satisfied',
+              // },
               {
                 title: 'Competitive Pricing',
                 description: 'Transparent pricing with flexible payment options',

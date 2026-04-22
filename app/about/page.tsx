@@ -112,7 +112,8 @@ export default function AboutPage() {
 
               {/* Download Resume */}
               <a
-                href="#"
+                href="/resume.pdf"
+                download
                 className="inline-flex items-center space-x-2 px-8 py-4 border border-purple-500/50 text-white rounded-lg font-semibold hover:bg-purple-500/10 transition-all duration-300 ml-4 group"
               >
                 <Download size={18} />

@@ -32,6 +32,7 @@ export default function ContactPage() {
     // Simulate form submission
     setTimeout(() => {
       setLoading(false)
+      console.log('Form submitted:', formData)
       setSubmitted(true)
       setFormData({ name: '', email: '', subject: '', message: '' })
 
@@ -100,7 +101,8 @@ export default function ContactPage() {
                     href="tel:+1234567890"
                     className="text-gray-400 hover:text-purple-400 transition-colors duration-300"
                   >
-                    +91 73065-39054
+                    +91 73065-39054 <br />
+                    +971 50 595 4758
                   </a>
                 </div>
               </div>
@@ -130,7 +132,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-white font-semibold mb-1">Location</h3>
-                  <p className="text-gray-400">Your City, Country</p>
+                  <p className="text-gray-400">ABu Dhabi, UAE</p>
                 </div>
               </div>
 

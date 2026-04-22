@@ -1,3 +1,4 @@
+"use client"
 import Link from 'next/link'
 import Image from 'next/image'
 import { Navbar } from '@/components/layout/Navbar'
@@ -13,6 +14,9 @@ import { ArrowRight, Sparkles } from 'lucide-react'
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3)
+  const handlePlay = (videoUrl: string) => {
+    window.open(videoUrl)
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -129,6 +133,7 @@ export default function Home() {
                   description={project.description}
                   clientName={project.clientName}
                   tools={project.tools}
+                  onPlay={() => handlePlay(project.videoUrl)}
                 />
               </div>
             ))}
