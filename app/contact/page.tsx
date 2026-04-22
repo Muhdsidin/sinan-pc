@@ -7,6 +7,8 @@ import { ScrollProgressBar } from '@/components/layout/ScrollProgressBar'
 import { ArrowLeft, Mail, MessageCircle, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
 
+
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -28,17 +30,37 @@ export default function ContactPage() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setLoading(true)
+    try {
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
 
-    // Simulate form submission
-    setTimeout(() => {
+      if (response.ok) {
+        setSubmitted(true)
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        })
+      } else {
+        console.error('Failed to send message')
+      }
+    } catch (error) {
+      console.error('Error sending message:', error)
+    } finally {
       setLoading(false)
-      console.log('Form submitted:', formData)
-      setSubmitted(true)
-      setFormData({ name: '', email: '', subject: '', message: '' })
+    }
+    
 
-      // Reset success message after 3 seconds
-      setTimeout(() => setSubmitted(false), 3000)
-    }, 1000)
+
+      
+       
+
   }
 
   return (
