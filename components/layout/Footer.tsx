@@ -24,7 +24,7 @@ export function Footer() {
     },
     {
       icon: MessageCircle,
-      href: 'https://wa.me/7306539054',
+      href: 'https://api.whatsapp.com/send?phone=917306539054',
       label: 'WhatsApp',
     },
   ]
@@ -82,7 +82,7 @@ export function Footer() {
                 <Mail size={16} />
                 <span>muhdsinanpc2257@gmail.com</span>
               </a>
-              <a href="https://wa.me/7306539054" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2 text-sm">
+              <a href="https://api.whatsapp.com/send?phone=917306539054" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 flex items-center space-x-2 text-sm">
                 <MessageCircle size={16} />
                 <span>WhatsApp</span>
               </a>

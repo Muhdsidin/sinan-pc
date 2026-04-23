@@ -28,7 +28,7 @@ export const projects: Project[] = [
     clientName: 'Sarah & John Studios',
     thumbnail: 'https://www.shutterstock.com/shutterstock/videos/3784414565/thumb/1.jpg?ip=x480',
     videoUrl: 'https://www.youtube.com/shorts/cPSrtahfanc',
-    tools: ['Premiere Pro', 'DaVinci Resolve'],
+    tools: ['Premiere Pro', 'After Effects'],
   },
   {
     id: '3',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
     clientName: 'Content Creator',
     thumbnail: 'https://plus.unsplash.com/premium_photo-1682125771198-f7cbed7cb868?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2hvcnQlMjBmaWxtfGVufDB8fDB8fHww',
     videoUrl: 'https://youtube.com/shorts/fO80Gy47cf8?si=Jf2L5ZrJov5yosoh',
-    tools: ['Premiere Pro', 'Adobe Audition', 'Motion Graphics'],
+    tools: ['Premiere Pro', 'After Effects', 'Motion Graphics'],
   },
   {
     id: '5',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     clientName: 'TechVision Inc.',
     thumbnail: 'https://images.pexels.com/photos/30599330/pexels-photo-30599330/free-photo-of-nissan-gt-r-nismo-in-parking-garage-at-dusk.png?auto=compress&cs=tinysrgb&dpr=1&w=500',
     videoUrl: 'https://www.youtube.com/shorts/kFWQEgnPP8I',
-    tools: ['DaVinci Resolve', 'After Effects', 'Motion Design'],
+    tools: ['DaVinci Resolve', 'After Effects', 'Premiere Pro'],
   },
   // {
   //   id: '6',
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     clientName: 'Culture Preservation Project',
     thumbnail: 'https://cdn2.shopify.com/s/files/1/0163/6622/files/How_to_Edit_Car_Photos_in_Lightroom_2_1024x1024.jpg?v=1562942625',
     videoUrl: 'https://www.youtube.com/shorts/YVpO-l-K3Es',
-    tools: ['DaVinci Resolve', 'Premiere Pro', 'Sound Design'],
+    tools: ['After Effects', 'Premiere Pro'],
   },
   // {
   // //   id: '7',
@@ -92,4 +92,4 @@ export const projects: Project[] = [
   // // },
 ]
 
-export const categories = ['All', 'Commercial', 'Wedding', 'Travel', 'Reels', 'YouTube', 'Documentary']
+export const categories = ['All', 'Commercial',   'Reels', 'YouTube', ]
