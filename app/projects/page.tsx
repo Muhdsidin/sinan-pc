@@ -18,6 +18,13 @@ export default function ProjectsPage() {
       ? projects
       : projects.filter((p) => p.category === selectedCategory)
 
+      const getYoutubeId = (url: string) => {
+  const regExp =
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([^&\n?#/]+)/;
+
+  return url.match(regExp)?.[1];
+};
+
   return (
     <div className="min-h-screen bg-background">
       <ScrollProgressBar />
@@ -114,12 +121,12 @@ export default function ProjectsPage() {
             </button>
 
             {/* Video Embed */}
-            <iframe
-              src={selectedProject.videoUrl}
-              className="w-full h-full"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            />
+           <iframe
+  src={`https://www.youtube.com/embed/${getYoutubeId(selectedProject.videoUrl)}`}
+  className="w-full h-full"
+  allowFullScreen
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+/>
 
             {/* Project Info */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">

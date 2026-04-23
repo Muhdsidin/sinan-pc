@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: 'Muhammad Sinan PC - Video Editor & Videographer',
   description: 'Professional video editing and videography portfolio. Cinematic content creation, visual storytelling, and premium video production.',
   keywords: 'video editor, videographer, content creator, video production, cinematic editing',
-  generator: 'v0.app',
+ 
   openGraph: {
     title: 'Muhammad Sinan PC - Video Editor & Videographer',
     description: 'Professional video editing and videography portfolio',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon.svg',
+        url: '/profile.png',
         type: 'image/svg+xml',
       },
     ],

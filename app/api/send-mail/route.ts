@@ -1,5 +1,3 @@
-
-
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -17,12 +15,11 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: body.email,
-      to: "officialzedro@gmail.com",
+      to: "mhdsinanpc2257@gmail.com",
       subject: body.subject,
       text: `
 Name: ${body.name}
 Email: ${body.email}
-
 Message:
 ${body.message}
       `,
@@ -34,7 +31,7 @@ ${body.message}
 
     return NextResponse.json(
       { success: false, message: "Failed to send email" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

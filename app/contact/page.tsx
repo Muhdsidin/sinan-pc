@@ -1,67 +1,61 @@
-'use client'
+"use client";
 
-import Link from 'next/link'
-import { Navbar } from '@/components/layout/Navbar'
-import { Footer } from '@/components/layout/Footer'
-import { ScrollProgressBar } from '@/components/layout/ScrollProgressBar'
-import { ArrowLeft, Mail, MessageCircle, MapPin, Phone } from 'lucide-react'
-import { useState } from 'react'
-
-
+import Link from "next/link";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { ScrollProgressBar } from "@/components/layout/ScrollProgressBar";
+import { ArrowLeft, Mail, MessageCircle, MapPin, Phone } from "lucide-react";
+import { useState } from "react";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  })
-  const [submitted, setSubmitted] = useState(false)
-  const [loading, setLoading] = useState(false)
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-    }))
-  }
+    }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setLoading(true)
+    e.preventDefault();
+    setLoading(true);
     try {
-      const response = await fetch('/api/send-mail', {
-        method: 'POST',
+      const response = await fetch("/api/send-mail", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      })
+      });
 
       if (response.ok) {
-        setSubmitted(true)
+        setSubmitted(true);
         setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-        })
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
       } else {
-        console.error('Failed to send message')
+        console.error("Failed to send message");
       }
     } catch (error) {
-      console.error('Error sending message:', error)
+      console.error("Error sending message:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-    
-
-
-      
-       
-
-  }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -83,7 +77,8 @@ export default function ContactPage() {
             Get In <span className="gradient-text">Touch</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl">
-            Have a project in mind? Let&apos;s discuss your video production needs
+            Have a project in mind? Let&apos;s discuss your video production
+            needs
           </p>
         </div>
       </section>
@@ -94,7 +89,9 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact Information */}
             <div className="animate-fade-in-up">
-              <h2 className="text-2xl font-bold text-white mb-8">Contact Information</h2>
+              <h2 className="text-2xl font-bold text-white mb-8">
+                Contact Information
+              </h2>
 
               {/* Email */}
               <div className="mb-8 flex items-start space-x-4">
@@ -163,9 +160,18 @@ export default function ContactPage() {
                 <h3 className="text-white font-semibold mb-4">Follow Me</h3>
                 <div className="flex space-x-4">
                   {[
-                    { name: 'Instagram', href: 'https://www.instagram.com/mhd.sin4n/' },
-                    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/muhammed-sinan-pc-107a43378/' },
-                    { name: 'YouTube', href: 'https://www.youtube.com/@msedits2122/shorts' },
+                    {
+                      name: "Instagram",
+                      href: "https://www.instagram.com/mhd.sin4n/",
+                    },
+                    {
+                      name: "LinkedIn",
+                      href: "https://www.linkedin.com/in/muhammed-sinan-pc-107a43378/",
+                    },
+                    {
+                      name: "YouTube",
+                      href: "https://www.youtube.com/@msedits2122/shorts",
+                    },
                   ].map((social) => (
                     <a
                       key={social.name}
@@ -174,7 +180,9 @@ export default function ContactPage() {
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center text-purple-400 hover:bg-purple-500/40 transition-all duration-300"
                     >
-                      <span className="text-xs font-semibold">{social.name[0]}</span>
+                      <span className="text-xs font-semibold">
+                        {social.name[0]}
+                      </span>
                     </a>
                   ))}
                 </div>
@@ -182,14 +190,20 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+            <div
+              className="lg:col-span-2 animate-fade-in-up"
+              style={{ animationDelay: "100ms" }}
+            >
               <div className="glass rounded-2xl p-8 border border-gray-700">
-                <h2 className="text-2xl font-bold text-white mb-6">Send me a Message</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">
+                  Send me a Message
+                </h2>
 
                 {submitted && (
                   <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg">
                     <p className="text-green-400 font-semibold">
-                      Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
+                      Thank you! Your message has been sent successfully.
+                      I&apos;ll get back to you soon.
                     </p>
                   </div>
                 )}
@@ -197,7 +211,9 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Name */}
                   <div>
-                    <label className="block text-white font-semibold mb-2">Name</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Name
+                    </label>
                     <input
                       type="text"
                       name="name"
@@ -211,7 +227,9 @@ export default function ContactPage() {
 
                   {/* Email */}
                   <div>
-                    <label className="block text-white font-semibold mb-2">Email</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Email
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -225,7 +243,9 @@ export default function ContactPage() {
 
                   {/* Subject */}
                   <div>
-                    <label className="block text-white font-semibold mb-2">Subject</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Subject
+                    </label>
                     <input
                       type="text"
                       name="subject"
@@ -239,7 +259,9 @@ export default function ContactPage() {
 
                   {/* Message */}
                   <div>
-                    <label className="block text-white font-semibold mb-2">Message</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Message
+                    </label>
                     <textarea
                       name="message"
                       value={formData.message}
@@ -275,5 +297,5 @@ export default function ContactPage() {
 
       <Footer />
     </div>
-  )
+  );
 }

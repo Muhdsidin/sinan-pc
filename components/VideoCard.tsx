@@ -56,7 +56,7 @@ export function VideoCard({
         <p className="text-gray-400 text-sm mb-3 line-clamp-2">{description}</p>
 
         {/* Client */}
-        <p className="text-gray-500 text-xs mb-3">Client: <span className="text-gray-300">{clientName}</span></p>
+        {/* <p className="text-gray-500 text-xs mb-3">Client: <span className="text-gray-300">{clientName}</span></p> */}
 
         {/* Tools */}
         <div className="flex flex-wrap gap-2">
