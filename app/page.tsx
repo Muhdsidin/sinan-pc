@@ -66,28 +66,29 @@ export default function Home() {
             </div>
 
             {/* Right - Profile Image */}
-            <div className="relative animate-slide-in-right">
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-purple-500/30 group">
-                <Image
-                  src="/profile.png"
-                  alt="Muhammad Sinan PC - Video Editor & Videographer"
-                  fill
-                  className="object-center group-hover:scale-105 transition-transform duration-500"
-                  priority
-                />
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
-                
-                {/* Glow Effect */}
-                <div className="absolute inset-0 rounded-2xl border border-purple-500/20 group-hover:border-purple-500/50 transition-all duration-300 animate-glow" />
-              </div>
+           <div className="relative animate-slide-in-right">
+  <div className="relative w-full aspect-[3/3] rounded-2xl overflow-hidden border border-purple-500/30 group">
+    <Image
+      src="/profile.png"
+      alt="Muhammad Sinan PC - Video Editor & Videographer"
+      fill
+      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+      priority
+    />
+    {/* Gradient Overlay */}
+    <div className="absolute inset-0 bg-gradient-to-t from-purple-900/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
 
-              {/* Floating Badge */}
-              <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl p-6 text-white shadow-2xl shadow-purple-500/50">
-                <p className="font-bold text-2xl">6+</p>
-                <p className="text-sm text-purple-100">Months Experience</p>
-              </div>
-            </div>
+    {/* Glow Effect */}
+    <div className="absolute inset-0 rounded-2xl border border-purple-500/20 group-hover:border-purple-500/50 transition-all duration-300 animate-glow" />
+  </div>
+
+  {/* Floating Badge */}
+  <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-purple-500 to-purple-700 rounded-xl p-6 text-white shadow-2xl shadow-purple-500/50">
+    <p className="font-bold text-2xl">6+</p>
+    <p className="text-sm text-purple-100">Months Experience</p>
+  </div>
+</div>
           </div>
         </div>
       </section>
